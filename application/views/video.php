@@ -55,11 +55,11 @@
       </div>
     </nav>
 
-    <header class="masthead" style="background: url('asset/img/bg-pattern.png'), linear-gradient(to left, #df7000,#5fb000)">
-      <iframe src="https://appr.tc/" allow="camera microphone" height="80%" width="70%" style="margin-top:100px;margin-left:20px">
-      </iframe>
-
+    <header class="masthead" style="background: url('asset/img/bg-pattern.png'), linear-gradient(to left, #ffffff,#ffffff)">
+      
     </header>
+
+    <a href="https://appr.tc/r/<?php $random = mt_rand(100000000, 999999999); echo $random;?>" target="_blank">Link</a>
 
     <footer>
       <div class="container">

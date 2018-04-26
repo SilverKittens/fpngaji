@@ -48,20 +48,20 @@
               <a class="nav-link js-scroll-trigger" href="">Masuk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<?php echo base_url('daftarakun') ?>">Daftar</a>
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url('signup') ?>">Daftar</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="masthead" style="background: url('asset/img/bg-pattern.png'), linear-gradient(to left, #df7000,#5fb000)">
+    <header class="masthead" style="background: url('asset/img/bg-pattern.png'), linear-gradient(to left, #bd41ab,#005cb0)">
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto" style="text-align:center">
-              <h1 class="mb-5">Ayo ngaji sekarang!</h1>
-             <img src="<?php echo base_url('asset/img/bo1.png') ?>" style="width:40%;" alt="">
+
+             <img src="<?php echo base_url('asset/img/bo1.png') ?>" style="width:60%;" alt="">
 
             </div>
           </div>

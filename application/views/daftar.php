@@ -45,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<?php echo base_url('masuk') ?>">Masuk</a>
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url('login') ?>">Masuk</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="">Daftar</a>
@@ -66,19 +66,17 @@
             </div>
           </div>
           <div class="col-lg-5 my-auto">
-            <form class="" action="" method="post">
-              <h5>Nama :</h5> <input required type="text" name="" placeholder="Nama Lengkap" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>E-mail :</h5> <input required type="email" name="" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>Password :</h5> <input required type="password" name="" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+            <form class="" action="<?php base_url()?>crud/add" method="post">
+              <h5>Nama :</h5> <input required type="text" name="nama" placeholder="Nama Lengkap" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+              <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+              <h5>Password :</h5> <input required type="password" name="password" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Masukan Password sekali lagi :</h5> <input required type="password" name="" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Jenis kelamin :</h5>
-              <input type="radio" name="jk" value="laki" checked> Laki - laki <input style="margin-left:20px" type="radio" name="jk" value="perempuan"> Perempuan <br>
-
-            </form>
+              <input type="radio" name="gender" value="Laki-laki" checked> Laki - laki <input style="margin-left:20px" type="radio" name="jk" value="Perempuan"> Perempuan <br>
             <br><br>
-              <a href="" class="btn btn-outline btn-xl js-scroll-trigger">Daftar Sekarang!</a>
+              <input type="submit" name="Daftar Sekarang!">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-
+                  </form>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
                   </div>
