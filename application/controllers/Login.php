@@ -19,7 +19,7 @@ class Login extends CI_Controller
                     'pst_email' => $result->pst_email,
                     'pst_password' => $result->pst_password
                 ];
-
+                $_SESSION['id_user']=$data;
                 $this->session->set_userdata('user',$data);
                 $user= array(
                   'user' => $this->session->userdata('user')

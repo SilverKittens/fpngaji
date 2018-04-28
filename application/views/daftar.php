@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="col-lg-5 my-auto">
-            <form class="" action="<?php base_url()?>crud/add" method="post">
+            <form class="" action="<?php echo base_url()?>Crud/add" method="post">
               <h5>Nama :</h5> <input required type="text" name="nama" placeholder="Nama Lengkap" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Password :</h5> <input required type="password" name="password1" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
@@ -74,9 +74,9 @@
               <h5>Jenis kelamin :</h5>
               <input type="radio" name="gender" value="Laki-laki"> Laki - laki <input style="margin-left:20px" type="radio" name="gender" value="Perempuan"> Perempuan <br>
             <br><br>
-              <input type="submit" name="Daftar Sekarang!">
+              <input type="submit" name="submit" value="Daftar Sekarang!">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                  </form>
+            </form>
 
           </div>
         </div>

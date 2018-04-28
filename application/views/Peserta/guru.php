@@ -1,6 +1,7 @@
 <?php if (!isset($_SESSION['id_user'])) {
     redirect(base_url("/Welcome/masuk"));
-} ?>
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
