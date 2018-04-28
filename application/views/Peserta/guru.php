@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sign Up - NgajiKuy</title>
+    <title>NgajiKuy</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('asset/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
@@ -19,24 +19,19 @@
     <link href="<?php echo base_url('https://fonts.googleapis.com/css?family=Lato')?>" rel="stylesheet">
     <link href="<?php echo base_url('https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900')?>" rel="stylesheet">
     <link href="<?php echo base_url('https://fonts.googleapis.com/css?family=Muli')?>" rel="stylesheet">
-    <style>
 
-    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: white;
-        opacity: 1; /* Firefox */
-    }
-    </style>
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url('asset/css/new-age.min.css')?>" rel="stylesheet">
 
   </head>
+
   <body id="page-top">
-    <?php echo  var_dump($_SESSION);?>
+      <?php echo  var_dump($_SESSION);?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="<?php echo base_url('home') ?>">Halaman Utama</a>
+      <div class="container" >
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">INI NAMA USER</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -44,46 +39,45 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<?php echo base_url('Welcome/masuk') ?>">Masuk</a>
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/guru">Ngaji</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="">Daftar</a>
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/edit">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/pembayaran">Pembayaran</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Logout">Log Out</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="masthead" style="background: url('asset/img/bg-pattern.png'), linear-gradient(to left, #00b064,#005cb0)">
+    <header class="masthead">
       <div class="container h-100">
         <div class="row h-100">
-          <div class="col-lg-7 my-auto">
-            <div class="header-content mx-auto" style="text-align:center">
-              <h1 class="mb-5">Buat Akun</h1>
-              <img src="<?php echo base_url('asset/img/bo2.png') ?>" style="width:40%;" alt="">
-
+          <div class="col-lg-7 my-auto" >
+            <div class="header-content mx-auto">
+              <h1 class="mb-5">Anda telah memiliki guru ngaji.</h1>
+              <a href="https://appr.tc/r/<?php $random = mt_rand(100000000, 999999999); echo $random;?>" target="_blank" class="btn btn-outline btn-xl js-scroll-trigger" >Link</a>
+              <a href="https://appr.tc/r/<?php $random = mt_rand(100000000, 999999999); echo $random;?>" target="_blank" class="btn btn-outline btn-xl js-scroll-trigger" >Lihat Jadwal</a>
             </div>
           </div>
-          <div class="col-lg-5 my-auto">
-            <form class="" action="<?php base_url()?>crud/add" method="post">
-              <h5>Nama :</h5> <input required type="text" name="nama" placeholder="Nama Lengkap" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>Password :</h5> <input required type="password" name="password1" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>Masukan Password sekali lagi :</h5> <input required type="password" name="password2" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <span id="confirmMessage" class="confirmMessage"></span>
-              <h5>Jenis kelamin :</h5>
-              <input type="radio" name="gender" value="Laki-laki"> Laki - laki <input style="margin-left:20px" type="radio" name="gender" value="Perempuan"> Perempuan <br>
-            <br><br>
-              <input type="submit" name="Daftar Sekarang!">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                  </form>
 
+          <div class="col-lg-5 my-auto"style="background-color: rgba(255, 255, 255, .2);padding:20px;border-radius: 25px" >
+            <div class="header-content mx-auto">
+                    <h1 class="mb-5">Mau tambah guru?</h1>
+                    <a href="https://appr.tc/r/<?php $random = mt_rand(100000000, 999999999); echo $random;?>" target="_blank" class="btn btn-outline btn-xl js-scroll-trigger" >Cari Guru</a>
           </div>
+        </div>
         </div>
       </div>
     </header>
 
     <footer>
+
       <div class="container">
         <p>&copy; Your Website 2018. All Rights Reserved.</p>
         <ul class="list-inline">

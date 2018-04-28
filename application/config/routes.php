@@ -52,7 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['home'] = 'welcome';
 $route['ngaji'] = 'Cvideopeserta';
-$route['signup'] = 'Cdaftar';
-$route['login'] = 'Cmasuk';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

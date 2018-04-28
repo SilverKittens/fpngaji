@@ -31,9 +31,8 @@
     <link href="<?php echo base_url('asset/css/new-age.min.css')?>" rel="stylesheet">
 
   </head>
-
   <body id="page-top">
-
+<?php echo  var_dump($_SESSION);?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -48,7 +47,7 @@
               <a class="nav-link js-scroll-trigger" href="">Masuk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<?php echo base_url('signup') ?>">Daftar</a>
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url('Welcome/daftar') ?>">Daftar</a>
             </li>
           </ul>
         </div>
@@ -66,12 +65,12 @@
             </div>
           </div>
           <div class="col-lg-5 my-auto">
-            <form class="" action="" method="post">
-              <h5>E-mail :</h5> <input required type="email" name="" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>Password :</h5> <input required type="password" name="" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+            <form class="" action="<?php echo base_url()?>login" method="post">
+              <h5>E-mail :</h5> <input required type="email" name="pst_email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+              <h5>Password :</h5> <input required type="password" name="pst_password" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+              <input name="submit" type="submit" class="btn btn-outline btn-xl js-scroll-trigger">
             </form>
             <br><br>
-              <a href="" class="btn btn-outline btn-xl js-scroll-trigger">Masuk</a>
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
 
                   <div class="button">

@@ -27,6 +27,7 @@
   </head>
 
   <body id="page-top">
+    <?php echo  var_dump($_SESSION);?>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -143,7 +144,7 @@
       <div class="cta-content">
         <div class="container">
           <h2>Stop waiting.<br>Start Reading.</h2>
-          <a href="<?php echo base_url('signup') ?>" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+          <a href="<?php echo base_url('Welcome/daftar') ?>" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
         </div>
       </div>
       <div class="overlay"></div>

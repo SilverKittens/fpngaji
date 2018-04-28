@@ -20,12 +20,11 @@ class Crud extends CI_Controller{
     $data = array(
     'pst_name' =>$this->input->post('nama') ,
     'pst_email' =>$this->input->post('email'),
-    'pst_password'=>$this->input->post('password'),
+    'pst_password'=>$this->input->post('password1'),
     'pst_gender'=>$this->input->post('gender')
    );
    $this->mdl_peserta->add($data);
-   var_dump($data);
-   //redirect('login','refresh');
+   redirect('login','refresh');
   }
 
 }
