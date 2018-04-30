@@ -11,7 +11,7 @@ class Login_model extends CI_Model
 
     public function validate_user($data) {
         $this->db->where('pst_email', $data['pst_email']);
-        $this->db->where('pst_password',($data['pst_password']));
+        $this->db->where('pst_password',$data['pst_password']);
         return $this->db->get('peserta')->row();
     }
 

@@ -7,15 +7,20 @@ class Cprofile extends CI_Controller{
   {
     parent::__construct();
     //Codeigniter : Write Less Do More
+    $this->load->model('mdl_peserta');
+    $data["get_all_data"]=$this->mdl_peserta->get_all_data();
   }
 
   public function Index()
   {
-    // code...
+    $this->load->model('mdl_peserta');
+    $data["get_all_data"]=$this->mdl_peserta->get_all_data();
   }
   public function guru()
   {
-    $this->load->view('Peserta/guru');
+    $this->load->model('mdl_peserta');
+    $data["get_all_data"]=$this->mdl_peserta->get_all_data();
+    $this->load->view('Peserta/guru',$data);
   }
   public function edit()
   {

@@ -17,7 +17,9 @@ class Login extends CI_Controller
             if(!empty($result)) {
                 $data =[
                     'pst_email' => $result->pst_email,
-                    'pst_password' => $result->pst_password
+                    'pst_password' => $result->pst_password,
+                    'id'=> $result->id,
+                    'pst_name' => $result->pst_name
                 ];
                 $_SESSION['id_user']=$data;
                 $this->session->set_userdata('user',$data);
