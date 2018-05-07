@@ -15,7 +15,9 @@ class Mdl_peserta extends CI_Model{
 
   public function get_all_data()
 	{
-		$query = $this->db->get('Peserta');
+    $this->load->database();
+		$query = $this->db->get('peserta');
+  //$query = $this->db->query('SELECT * from peserta');
 		return $query;
 	}
 

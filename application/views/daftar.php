@@ -67,14 +67,14 @@
           <div class="col-lg-5 my-auto">
             <form class="" action="<?php echo base_url()?>Crud/add" method="post">
               <h5>Nama :</h5> <input required type="text" name="nama" placeholder="Nama Lengkap" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>Password :</h5> <input required type="password" name="password1" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <h5>Masukan Password sekali lagi :</h5> <input required type="password" name="password2" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-              <span id="confirmMessage" class="confirmMessage"></span>
+              <h5>Tempat, Tanggal lahir :</h5>
+              <input type="text" name="tempat" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:45%">,<input type="date" name="bday" max="2010-12-31" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:45%" >
               <h5>Jenis kelamin :</h5>
               <input type="radio" name="gender" value="Laki-laki"> Laki - laki <input style="margin-left:20px" type="radio" name="gender" value="Perempuan"> Perempuan <br>
-            <br><br>
-              <input type="submit" name="submit" value="Daftar Sekarang!">
+              <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+              <h5>Password :</h5> <input required type="password" name="password1" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+              <br><br>
+              <input type="submit" name="submit" value="Daftar Sekarang!"  class="btn btn-outline btn-xl js-scroll-trigger" style="background-color:transparent">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
             </form>
 

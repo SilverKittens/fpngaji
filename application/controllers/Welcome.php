@@ -30,4 +30,12 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('Daftar');
 	}
+	public function daftarguru()
+	{
+		$this->load->view('daftarguru');
+	}
+	public function masukguru()
+	{
+		$this->load->view('masukguru');
+	}
 }
