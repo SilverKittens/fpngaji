@@ -32,7 +32,6 @@
 
   </head>
   <body id="page-top">
-    <?php echo  var_dump($_SESSION);?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -60,7 +59,7 @@
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto" style="text-align:center">
               <h1 class="mb-5">Buat Akun</h1>
-              <img src="<?php echo base_url('asset/img/bo2.png') ?>" style="width:40%;" alt="">
+              <img src="<?php echo base_url('asset/img/manboy.png') ?>" style="width:50%;" alt="">
 
             </div>
           </div>
@@ -73,6 +72,8 @@
               <input type="radio" name="gender" value="Laki-laki"> Laki - laki <input style="margin-left:20px" type="radio" name="gender" value="Perempuan"> Perempuan <br>
               <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Password :</h5> <input required type="password" name="password1" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+              <h5>Berkas :</h5>
+              <input type="file" name="file" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%">
               <br><br>
               <input type="submit" name="submit" value="Daftar Sekarang!"  class="btn btn-outline btn-xl js-scroll-trigger" style="background-color:transparent">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->

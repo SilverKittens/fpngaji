@@ -33,7 +33,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container" >
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><?php foreach($get_all->result_array() as $row){ echo $row['pst_name'];}?></a></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><?php foreach($get_selected->result_array() as $row){ echo $row['pst_name'];}?></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -62,20 +62,28 @@
         <div class="row h-100">
           <div class="col-lg-5 my-auto" >
             <div class="header-content mx-auto">
-              <h1 class="mb-5">Edit Profile</h1>
+              <h1 class="mb-5">Profile</h1>
+              <?php foreach($get_selected->result_array() as $row){?>
+                <div width="210px" length="210px" style="border-radius: 50%; border-width:20px; border-color:black">
+                  <img src="<?php echo base_url()?>asset/picture/<?php echo $row['foto']?>" width="200px" length="200px" style="border-radius: 50%;">
+                </div>
+              <?php }?>
             </div>
           </div>
 
           <div class="col-lg-7 my-auto" >
             <div class="header-content mx-auto">
-              <form class="" action="" method="post">
+              <?php foreach($get_selected->result_array() as $row){?>
+                <h5>Nama :</h5> <input disabled type="text" name="nama" value="<?php echo $row['pst_name'];?>" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+                <h5>E-mail :</h5> <input required type="email" name="email" value="<?php echo $row['pst_email'];?>" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+                  <?php }?>
+              <!--<form class="" action="" method="post">
                 <h5>Nama :</h5> <input required type="text" name="nama" placeholder="Nama Lengkap" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
                 <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-                <h5>Password :</h5> <input required type="password" name="password1" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-                <h5>Masukan Password sekali lagi :</h5> <input required type="password" name="password2" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
                 <span id="confirmMessage" class="confirmMessage"></span>
               <br><br>
                 <input type="submit" name="Simpan" class="btn btn-outline btn-xl js-scroll-trigger">
+              -->
           </div>
         </div>
         </div>

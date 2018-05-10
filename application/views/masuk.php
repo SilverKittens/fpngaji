@@ -32,7 +32,6 @@
 
   </head>
   <body id="page-top">
-<?php echo  var_dump($_SESSION);?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">

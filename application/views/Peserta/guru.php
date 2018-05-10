@@ -32,10 +32,11 @@
   </head>
 
   <body id="page-top">
+    <!-- <?php echo ($_SESSION['id_user']['id']);?> foreach($get_selected as $row){ echo $row['pst_name'];} -->
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container" >
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><?php foreach($get_all->result_array() as $row){ echo $row['pst_name'];}?></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><?php foreach($get_selected->result_array() as $row){ echo $row['pst_name'];}?></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
