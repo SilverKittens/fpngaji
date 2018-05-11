@@ -44,7 +44,7 @@
               <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/guru">Ngaji</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/edit">Edit Profile</a>
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/profile">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/pembayaran">Pembayaran</a>
@@ -61,11 +61,11 @@
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-lg-5 my-auto" >
-            <div class="header-content mx-auto">
+            <div class="header-content mx-auto" style="text-align:center">
               <h1 class="mb-5">Profile</h1>
               <?php foreach($get_selected->result_array() as $row){?>
                 <div width="210px" length="210px" style="border-radius: 50%; border-width:20px; border-color:black">
-                  <img src="<?php echo base_url()?>asset/picture/<?php echo $row['foto']?>" width="200px" length="200px" style="border-radius: 50%;">
+                  <img src="<?php echo base_url()?>asset/picture/<?php echo $row['foto']?>" width="200px" length="200px" style="border-radius: 50%;"><br><br><br>
                 </div>
               <?php }?>
             </div>
@@ -75,8 +75,11 @@
             <div class="header-content mx-auto">
               <?php foreach($get_selected->result_array() as $row){?>
                 <h5>Nama :</h5> <input disabled type="text" name="nama" value="<?php echo $row['pst_name'];?>" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
-                <h5>E-mail :</h5> <input required type="email" name="email" value="<?php echo $row['pst_email'];?>" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
+                <h5>E-mail :</h5> <input disabled required type="email" name="email" value="<?php echo $row['pst_email'];?>" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
                   <?php }?>
+                  <form action="<?php echo base_url()?>Cprofile/edit" method="post">
+                    <input type="submit" value="Edit" class="btn btn-outline btn-xl js-scroll-trigger" style="color:black">
+                  </form>
               <!--<form class="" action="" method="post">
                 <h5>Nama :</h5> <input required type="text" name="nama" placeholder="Nama Lengkap" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
                 <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>

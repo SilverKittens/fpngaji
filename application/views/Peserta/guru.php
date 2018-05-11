@@ -47,7 +47,7 @@
               <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/guru">Ngaji</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/edit">Edit Profile</a>
+              <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/profile">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="<?php echo base_url()?>Cprofile/pembayaran">Pembayaran</a>

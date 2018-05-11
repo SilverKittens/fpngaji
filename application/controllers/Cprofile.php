@@ -21,11 +21,23 @@ class Cprofile extends CI_Controller{
     $lo["get_selected"]=$this->mdl_peserta->get_selected_data_peserta($id);
     $this->load->view('Peserta/guru',$lo);
   }
-  public function edit()
+  public function profile()
   {
     $id = $_SESSION['id_user']['id'];
     $lo["get_selected"]=$this->mdl_peserta->get_selected_data_peserta($id);
     $this->load->view('Peserta/profile',$lo);
+  }
+  public function edit()
+  {
+    $id = $_SESSION['id_user']['id'];
+    $lo["get_selected"]=$this->mdl_peserta->get_selected_data_peserta($id);
+    $this->load->view('Peserta/edit',$lo);
+  }
+  public function editfoto()
+  {
+    $id = $_SESSION['id_user']['id'];
+    $lo["get_selected"]=$this->mdl_peserta->get_selected_data_peserta($id);
+    $this->load->view('Peserta/editfoto',$lo);
   }
   public function pembayaran()
   {

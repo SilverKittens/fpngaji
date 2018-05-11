@@ -17,6 +17,20 @@ class Crud extends CI_Controller{
   {
 
   }
+  public function updatedata()
+  {
+    $id = $_SESSION['id_user']['id'];
+
+    $pst_name =$this->input->post('nama');
+            $data = array(
+                          'pst_name'         => $pst_name
+                        );
+                        $this->db->set($data);
+                        $this->db->where('id', $id);
+                        $this->db->update('peserta');
+               redirect('Cprofile/profile','refresh');
+
+  }
   public function add()
   {
     $pst_name =$this->input->post('nama');
