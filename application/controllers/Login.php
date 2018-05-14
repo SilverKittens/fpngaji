@@ -9,7 +9,7 @@ class Login extends CI_Controller
         $this->load->model("login_model", "login");
         if(!empty($_SESSION['id_user']))
             //$this->load->view('Peserta/guru');
-            redirect('Cprofile/guru');
+            redirect('Cprofile/landing');
     }
 
     public function index() {
@@ -27,7 +27,7 @@ class Login extends CI_Controller
                 $user= array(
                   'user' => $this->session->userdata('user')
                 );
-                redirect('Cprofile/guru');
+                redirect('Cprofile/landing');
                 //$this->load->view('Peserta/guru', $user);
             } else {
                 $this->session->set_flashdata('flash_data', 'Username or password is wrong!');
