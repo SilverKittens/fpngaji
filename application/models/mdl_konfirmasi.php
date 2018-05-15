@@ -24,4 +24,18 @@ class Mdl_konfirmasi extends CI_Model{
     $query = $this->db->get_where('konfirmasi', array('guru_name' => $guru_name));
     return $query;
   }
+  public function get_selected_konfirmasi1($guru_name)
+  {
+    $query = $this->db->get_where('konfirmasi', array('pst_name' => $guru_name,
+                                                        'status' => 'diterima'));
+    return $query;
+  }
+  public function set($id)
+  {
+    $data = array(
+               'status' => 'diterima'
+            );
+            $this->db->where('id', $id);
+            $this->db->update('konfirmasi', $data);
+  }
 }

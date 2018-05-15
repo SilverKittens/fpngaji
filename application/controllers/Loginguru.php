@@ -19,6 +19,7 @@ class Loginguru extends CI_Controller
                     'guru_email' => $result->guru_email,
                     'guru_password' => $result->guru_password,
                     'id'=> $result->id,
+                    'guru_gender'=> $result->guru_gender,
                     'guru_name' => $result->guru_name
                 ];
                 $_SESSION['id_user']=$data;

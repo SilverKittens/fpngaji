@@ -125,10 +125,7 @@
 
           <div class="col-lg-6 content order-lg-2 order-1 wow fadeInRight">
             <h1> Jadwal yang anda miliki</h1>
-            <?php
-          if ($get_jadwal->result_array()) {
-            foreach($get_jadwal->result_array() as $row){
-                if($row){?>
+
             <table style="width:100%;border-color:black">
               <tr>
                 <td>No</td>
@@ -138,6 +135,10 @@
                 <td>Jam</td>
                 <td>Link</td>
               </tr>
+              <?php
+            if ($get_jadwal->result_array()) {
+              foreach($get_jadwal->result_array() as $row){
+                  if($row){?>
               <tr>
                 <td><?php echo $row['id'];?></td>
                 <td><?php echo $row['pst_name'];?></td>
@@ -146,20 +147,63 @@
                 <td><?php echo $row['jam'];?></td>
                 <td><a href="https://appr.tc/r/<?php echo $row['link'];?>" target="_blank" style="text-decoration:none">Ngaji</a></td>
               </tr>
+            <?php }
+          }
+          }
+          else {  ?>
+            <h4 class="mb-5">Anda belum memiliki jadwal ngaji.</h4>
+          <?php   }
+         ?>
             </table>
 
-                                         <?php }
-                                       }
-                                       }
-                                       else {  ?>
-                                         <h4 class="mb-5">Anda belum memiliki jadwal ngaji.</h4>
-                                       <?php   }
-                                      ?>
+
         </div>
         </div>
 
       </div>
     </section><!-- #about -->
+
+    <section id="call-to-action">
+      <div class="container wow fadeIn">
+        <div class="row">
+            <h3 class="cta-title">Pasang Jadwal </h3>
+          <div ><br><br>
+            <!-- tabel -->
+            <form action="<?php echo base_url()?>crud/addjadwalguru" method="post">
+                <h3 class="cta-title">Paket</h3>
+                <select name="paket">
+                  <option value="Asasi 1">Asasi 1</option>
+                  <option value="Asasi 2">Asasi 2</option>
+                  <option value="Tahmidi">Tahmidi</option>
+                  <option value="Tilawah">Tilawah</option>
+                  <option value="Tawasuthi">Tawasuthi</option>
+                  <option value="Idadi">Idadi</option>
+                  <option value="Takmili">Takmili</option>
+                  <option value="Tahsini">Tahsini</option>
+                  <option value="Tajwidi">Tajwidi</option>
+                </select>
+                <h3 class="cta-title">Hari</h3>
+                <select name="hari">
+                  <option value="Senin">Senin</option>
+                  <option value="Selasa">Selasa</option>
+                  <option value="Rabu">Rabu</option>
+                  <option value="Kamis">Kamis</option>
+                  <option value="Jumat">Jumat</option>
+                  <option value="Sabtu">Sabtu</option>
+                  <option value="Minggu">Minggu</option>
+                </select>
+                <h3 class="cta-title">Jam</h3>
+              <input type="text" name="jam" value=""><br><br>
+              <input type="submit" name="Submit" value="Tambahkan jadwal">
+            </form>
+
+        </div>
+      </div>
+      </div>
+    </section><!-- #call-to-action -->
+
+
+
     <!--==========================
        Call To Action Section
        ============================-
@@ -260,7 +304,7 @@
               <h1><?php echo $row['paket'];?>:</h1>
               <h5><?php echo $row['status'];?></h5>
                       <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Terima   </a>
+                        <a class="cta-btn align-middle" href="<?php echo base_url()?>Crud/update/<?php echo $row['id'] ?>">Terima</a>
                         <a class="cta-btn align-middle" href="#" style="color:red">  Tolak</a>
                       </div>
               <br><br>

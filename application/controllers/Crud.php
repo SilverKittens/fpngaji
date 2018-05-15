@@ -9,9 +9,10 @@ class Crud extends CI_Controller{
     //Codeigniter : Write Less Do More
 
     $this->load->model('mdl_peserta');
-    $this->load->model('mdl_pembayaran');
+    $this->load->model('mdl_konfirmasi');
     $this->load->model('mdl_guru');
     $this->load->model('mdl_jadwal');
+    $this->load->model('mdl_jguru');
       $this->load->library('upload');
       $this->load->library('pagination');
   }
@@ -71,15 +72,17 @@ class Crud extends CI_Controller{
     }
   }
 
-  public function addpembayaran($murid,$guru,$paket)
+  public function addkonfirmasi($murid,$guru,$paket,$hari,$jam)
   {
     $data = array(
                   'pst_name'         => urldecode($murid),
                   'guru_name'        => urldecode($guru),
                   'paket'            => urldecode($paket),
-                  'status'       => 'belum'
+                  'status'       => 'belum',
+                  'hari'       => $hari,
+                  'jam'       => $jam
                 );
-       $this->mdl_pembayaran->add($data);
+       $this->mdl_konfirmasi->add($data);
        redirect('Cprofile/landing','refresh');
   }
   public function addguru()
@@ -117,5 +120,42 @@ class Crud extends CI_Controller{
     }else {
       echo "tidak masuk";
     }
+  }
+  public function update($id)
+  {
+    $this->mdl_konfirmasi->set($id);
+    redirect('Cprofile/landingG','refresh');
+  }
+  public function addjadwalguru()
+  {
+    $guru_name = $_SESSION['id_user']['guru_name'];
+    $guru_gender = $_SESSION['id_user']['guru_gender'];
+    $paket =$this->input->post('paket');
+    $hari =$this->input->post('hari');
+    $jam=$this->input->post('jam');
+
+    $data = array(
+                  'guru_name'          => urldecode($guru_name),
+                  'paket'              => urldecode($paket),
+                  'hari'               => $hari,
+                  'jam'                => $jam,
+                  'jeniskelamin'       => $guru_gender
+                );
+       $this->mdl_jguru->add($data);
+       redirect('Cprofile/landingG','refresh');
+  }
+  public function addjadwalngaji($guru,$pst,$paket,$hari,$jam)
+  {
+    $link = rand(100000,999999);
+    $data = array(
+                  'guru_name'          => urldecode($guru),
+                  'pst_name'              => urldecode($pst),
+                  'hari'               => $hari,
+                  'jam'                => $jam,
+                  'paket'       => $paket,
+                  'link'        =>$link
+                );
+       $this->mdl_jadwal->add($data);
+       redirect('admin','refresh');
   }
 }

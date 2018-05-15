@@ -57,7 +57,7 @@
         <div class="row h-100">
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5">Ngaji Kuy adalah tempat bla bla bla untuk belajar mengaji secara online. Tidak perlu repot untuk harus mencari guru ngaji!</h1>
+              <h1 class="mb-5">Ngaji Kuy adalah tempat untuk belajar mengaji secara online. Tidak perlu repot untuk harus mencari guru ngaji!</h1>
               <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Daftar Sekarang!</a>
             </div>
           </div>

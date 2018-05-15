@@ -82,9 +82,10 @@
       <?php
       if ($get_jadwal->result_array()) {
         // code...
+        ?>
+          <h1 class="mb-5">Anda telah memiliki guru ngaji.</h1><?php
         foreach($get_jadwal->result_array() as $row1){
         if($row1){?>
-          <h1 class="mb-5">Anda telah memiliki guru ngaji.</h1>
         <?php }
         }
         }
@@ -92,7 +93,7 @@
           <h1 class="mb-5">Anda belum memiliki guru ngaji.</h1>
         <?php   }
        ?>
-      <a href="https://appr.tc/r/<?php $random = mt_rand(100000000, 999999999); echo $random;?>" target="_blank" class="btn-get-started" >Cari Guru</a>
+      <a href="#call-to-action" target="_blank" class="btn-get-started" >Cari Guru</a>
               <a href="#about" target="" class="btn-get-started" >Lihat Jadwal</a>
     </div>
   </section><!-- #hero -->
@@ -137,10 +138,7 @@
 
           <div class="col-lg-6 content order-lg-2 order-1 wow fadeInRight">
             <h1> Jadwal yang anda miliki</h1>
-            <?php
-          if ($get_jadwal->result_array()) {
-            foreach($get_jadwal->result_array() as $row){
-                if($row){?>
+
             <table style="width:100%;border-color:black">
               <tr>
                 <td>No</td>
@@ -150,6 +148,10 @@
                 <td>Jam</td>
                 <td>Link</td>
               </tr>
+              <?php
+            if ($get_jadwal->result_array()) {
+              foreach($get_jadwal->result_array() as $row){
+                  if($row){?>
               <tr>
                 <td><?php echo $row['id'];?></td>
                 <td><?php echo $row['guru_name'];?></td>
@@ -158,15 +160,16 @@
                 <td><?php echo $row['jam'];?></td>
                 <td><a href="https://appr.tc/r/<?php echo $row['link'];?>" target="_blank" style="text-decoration:none">Ngaji</a></td>
               </tr>
+            <?php }
+          }
+          }
+          else {  ?>
+            <h4 class="mb-5">Anda belum memiliki jadwal ngaji.</h4>
+          <?php   }
+         ?>
             </table>
 
-                                         <?php }
-                                       }
-                                       }
-                                       else {  ?>
-                                         <h4 class="mb-5">Anda belum memiliki jadwal ngaji.</h4>
-                                       <?php   }
-                                      ?>
+
         </div>
         </div>
 
@@ -213,7 +216,7 @@
                                <td class="cell100 column4"><?php echo $row['hari'];?></td>
                                <td class="cell100 column5"><?php echo $row['jam'];?></td>
                                <?php $murid = $_SESSION['id_user']['pst_name']; $guru=$row['guru_name'];$paket = $row['paket'] ?>
-                               <td class="cell100 column6"><a href="<?php echo base_url()?>Crud/addpembayaran/<?php echo $murid ?>/<?php echo $guru ?>/<?php echo $paket ?>" target="" class="btn-get-started">Daftar</a></td>
+                               <td class="cell100 column6"><a href="<?php echo base_url()?>Crud/addkonfirmasi/<?php echo $murid ?>/<?php echo $guru ?>/<?php echo $paket ?>/<?php echo $row['hari'] ?>/<?php echo $row['jam'] ?>" target="" class="btn-get-started">Daftar</a></td>
                              </tr>
 
                            <?php   }
@@ -306,11 +309,16 @@
       <div class="container wow fadeIn">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Pembayaran</h3>
+            <h1 class="cta-title">Pembayaran</h1>
             <p>Pembayaran dapat dilakukan jika Ustad/Ustadzah menerima permintaan anda</p>
             <?php foreach($get_konfirmasi->result_array() as $row){ ?>
-              <h1><?php echo $row['paket'];?>:</h1>
-              <h5><?php echo $row['status'];?> disetujui</h5>
+              <h3><?php echo $row['paket'] ?> :  <?php echo $row['guru_name']?></h3>
+              <h5><?php echo $row['status'];?> </h5>
+              <?php
+
+
+
+               ?>
               <br><br>
                 <?php }?>
               </div>

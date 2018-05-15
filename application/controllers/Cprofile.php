@@ -25,7 +25,7 @@ class Cprofile extends CI_Controller{
     $pst_name = $_SESSION['id_user']['pst_name'];
     $lo["get_selected"]=$this->mdl_peserta->get_selected_data_peserta($id);
     $lo["get_jadwal"]=$this->mdl_jadwal->get_selected_jadwal($pst_name);
-    $lo["get_pembayaran"]=$this->mdl_pembayaran->get_selected_pembayaran($pst_name);
+    $lo["get_konfirmasi"]=$this->mdl_konfirmasi->get_selected_konfirmasi1($pst_name);
     $lo["get_guru"]=$this->mdl_jguru->get_all_data();
     $this->load->view('Peserta/landing',$lo);
   }
@@ -33,7 +33,7 @@ class Cprofile extends CI_Controller{
   {
     $id = $_SESSION['id_user']['id'];
     $guru_name = $_SESSION['id_user']['guru_name'];
-    $lo["get_jadwal"]=$this->mdl_jadwal->get_selected_jadwal($guru_name);
+    $lo["get_jadwal"]=$this->mdl_jadwal->get_selected_jadwal1($guru_name);
     $lo["get_konfirmasi"]=$this->mdl_konfirmasi->get_selected_konfirmasi($guru_name);
     $lo["get_guru"]=$this->mdl_guru->get_selected_guru($id);
     $this->load->view('Guru/landingG',$lo);

@@ -31,7 +31,6 @@
     <link href="<?php echo base_url('asset/css/new-age.min.css')?>" rel="stylesheet">
 
   </head>
-  <?php echo var_dump($_SESSION) ?>
   <body id="page-top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">

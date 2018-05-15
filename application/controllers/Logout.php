@@ -9,8 +9,6 @@ class Logout extends CI_Controller
         $this->load->model("login_model", "login");
         session_unset();
         session_destroy();
-        if(!empty($_SESSION['id_user']))
-            $this->load->view('Cprofile/guru');
     }
 
 
@@ -24,7 +22,7 @@ class Logout extends CI_Controller
 			}
 
 			// user logout ok
-			$this->load->view('masuk');
+			$this->load->view('welcome_message');
 
 		} else {
 
