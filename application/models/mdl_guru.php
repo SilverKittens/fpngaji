@@ -12,6 +12,10 @@ class Mdl_guru extends CI_Model{
   {
       $this->db->insert('guru', $data);
   }
+  public function set($value='')
+  {
+    // code...
+  }
 
   public function get_all_data()
 	{
@@ -19,7 +23,7 @@ class Mdl_guru extends CI_Model{
   //$query = $this->db->query('SELECT * from peserta');
 		return $query;
 	}
-  public function get_selected_data_peserta($id)
+  public function get_selected_guru($id)
   {
     $query = $this->db->get_where('guru', array('id' => $id));
     return $query;

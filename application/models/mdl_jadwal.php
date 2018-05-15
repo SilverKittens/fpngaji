@@ -21,7 +21,7 @@ class Mdl_jadwal extends CI_Model{
 	}
   public function get_selected_jadwal($pst_name)
   {
-    $query = $this->db->get_where('jadwalngaji', array('pst_name' => $pst_name));
+    $query = $this->db->get_where('jadwalngaji', array('guru_name' => $pst_name));
     return $query;
   }
 }

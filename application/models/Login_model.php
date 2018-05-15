@@ -14,6 +14,11 @@ class Login_model extends CI_Model
         $this->db->where('pst_password',$data['pst_password']);
         return $this->db->get('peserta')->row();
     }
+    public function validate_guru($data) {
+        $this->db->where('guru_email', $data['guru_email']);
+        $this->db->where('guru_password',$data['guru_password']);
+        return $this->db->get('guru')->row();
+    }
 
     function __destruct() {
         $this->db->close();

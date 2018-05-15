@@ -64,7 +64,7 @@
             </div>
           </div>
           <div class="col-lg-5 my-auto">
-            <form class="" action="<?php echo base_url()?>Crud/add" method="post">
+            <form class="" action="<?php echo base_url()?>Crud/addguru" method="post" enctype="multipart/form-data">
               <h5>Nama :</h5> <input required type="text" name="nama" placeholder="Nama Lengkap" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Tempat, Tanggal lahir :</h5>
               <input type="text" name="tempat" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:45%">,<input type="date" name="bday" max="2010-12-31" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:45%" >
@@ -73,7 +73,7 @@
               <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Password :</h5> <input required type="password" name="password1" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Berkas :</h5>
-              <input type="file" name="file" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%">
+              <input type="file" name="fotoberkas">
               <br><br>
               <input type="submit" name="submit" value="Daftar Sekarang!"  class="btn btn-outline btn-xl js-scroll-trigger" style="background-color:transparent">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->

@@ -25,7 +25,18 @@
   <!-- Libraries CSS Files -->
   <link href="<?php echo base_url('asset/lib/font-awesome/css/font-awesome.min.css')?>" rel="stylesheet">
   <link href="<?php echo base_url('asset/lib/animate/animate.min.css')?>" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/vendor/bootstrap/csstable/bootstrap.min.css')?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/fonts/font-awesome-4.7.0/css/font-awesome.min.css')?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/vendor/animate/animate.css')?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/vendor/select2/select2.min.css')?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/vendor/perfect-scrollbar/perfect-scrollbar.css')?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/util.css')?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/main.css')?>">
   <!-- Main Stylesheet File -->
   <link href="<?php echo base_url('asset/css/style.css')?>" rel="stylesheet">
 
@@ -38,7 +49,7 @@
 </head>
 
 <body>
-
+  <!--<?php var_dump($_SESSION) ?>-->
   <!--==========================
   Header
   ============================-->
@@ -68,9 +79,21 @@
   ============================-->
   <section id="hero">
     <div class="hero-container">
-      <h1 class="mb-5">Anda telah memiliki guru ngaji.</h1>
+      <?php
+      if ($get_jadwal->result_array()) {
+        // code...
+        foreach($get_jadwal->result_array() as $row1){
+        if($row1){?>
+          <h1 class="mb-5">Anda telah memiliki guru ngaji.</h1>
+        <?php }
+        }
+        }
+        else { ?>
+          <h1 class="mb-5">Anda belum memiliki guru ngaji.</h1>
+        <?php   }
+       ?>
       <a href="https://appr.tc/r/<?php $random = mt_rand(100000000, 999999999); echo $random;?>" target="_blank" class="btn-get-started" >Cari Guru</a>
-              <a href="#about" target="_blank" class="btn-get-started" >Lihat Jadwal</a>
+              <a href="#about" target="" class="btn-get-started" >Lihat Jadwal</a>
     </div>
   </section><!-- #hero -->
 
@@ -114,7 +137,10 @@
 
           <div class="col-lg-6 content order-lg-2 order-1 wow fadeInRight">
             <h1> Jadwal yang anda miliki</h1>
-            <?php foreach($get_jadwal->result_array() as $row){ ?>
+            <?php
+          if ($get_jadwal->result_array()) {
+            foreach($get_jadwal->result_array() as $row){
+                if($row){?>
             <table style="width:100%;border-color:black">
               <tr>
                 <td>No</td>
@@ -130,11 +156,17 @@
                 <td><?php echo $row['paket'];?></td>
                 <td><?php echo $row['hari'];?></td>
                 <td><?php echo $row['jam'];?></td>
-                <td><a href="https://appr.tc/r/<?php echo $random;?>" target="_blank" style="text-decoration:none">Ngaji</a></td>
+                <td><a href="https://appr.tc/r/<?php echo $row['link'];?>" target="_blank" style="text-decoration:none">Ngaji</a></td>
               </tr>
             </table>
-            <?php } ?>
 
+                                         <?php }
+                                       }
+                                       }
+                                       else {  ?>
+                                         <h4 class="mb-5">Anda belum memiliki jadwal ngaji.</h4>
+                                       <?php   }
+                                      ?>
         </div>
         </div>
 
@@ -150,11 +182,50 @@
                <h3 class="cta-title">Cari Guru</h3>
                <p class="cta-text">Cari Ustad / Ustadzah sesuai dengan paket yang anda mau</p>
              </div>
-             <div class="col-lg-3 cta-btn-container text-center">
-               <a class="cta-btn align-middle" href="#">Call To Action</a>
+             <div class="text-center">
+               <!-- tabel -->
+               <div class="limiter">
+                   <div class="wrap-table100">
+                     <div class="table100 ver3 b-110">
+                       <div class="table100-head"style="text-align:center">
+                         <table >
+                           <thead>
+                             <tr class="row100 head">
+                               <th class="cell100 column1">Nama Guru</th>
+                               <th class="cell100 column2">Paket</th>
+                               <th class="cell100 column3">Jenis Kelamin</th>
+                               <th class="cell100 column4">Hari</th>
+                               <th class="cell100 column5">Jam</th>
+                               <th class="cell100 column6">Link</th>
+                             </tr>
+                           </thead>
+                         </table>
+                       </div>
+
+                       <div class="table100-body js-pscroll">
+                         <table>
+                           <tbody>
+                               <?php foreach($get_guru->result_array() as $row){ ?>
+                             <tr class="row100 body">
+                               <td class="cell100 column1"><?php echo $row['guru_name'];?></td>
+                               <td class="cell100 column2"><?php echo $row['paket'];?></td>
+                               <td class="cell100 column3"><?php echo $row['jeniskelamin'];?></td>
+                               <td class="cell100 column4"><?php echo $row['hari'];?></td>
+                               <td class="cell100 column5"><?php echo $row['jam'];?></td>
+                               <?php $murid = $_SESSION['id_user']['pst_name']; $guru=$row['guru_name'];$paket = $row['paket'] ?>
+                               <td class="cell100 column6"><a href="<?php echo base_url()?>Crud/addpembayaran/<?php echo $murid ?>/<?php echo $guru ?>/<?php echo $paket ?>" target="" class="btn-get-started">Daftar</a></td>
+                             </tr>
+
+                           <?php   }
+                          ?>
+                           </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
              </div>
            </div>
-
+         </div>
          </div>
        </section><!-- #call-to-action -->
     <!--==========================
@@ -205,7 +276,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-15 wow fadeInUp" data-wow-delay="0.2s" style="text-align:center">
               <?php foreach($get_selected->result_array() as $row){?>
-                  <img src="<?php echo base_url()?>asset/picture/<?php echo $row['foto']?>" width="200px" length="200px" style="border-radius: 50%;"><br><br><br>
+                  <img src="<?php echo base_url()?>asset/picture/peserta/<?php echo $row['foto']?>" width="200px" length="200px" style="border-radius: 50%;"><br><br><br>
               <?php }?>
           </div>
               <div class="col-lg-4 col-md-10 wow fadeInUp" data-wow-delay="0.2s">
@@ -236,9 +307,10 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
             <h3 class="cta-title">Pembayaran</h3>
-            <?php foreach($get_pembayaran->result_array() as $row){ ?>
+            <p>Pembayaran dapat dilakukan jika Ustad/Ustadzah menerima permintaan anda</p>
+            <?php foreach($get_konfirmasi->result_array() as $row){ ?>
               <h1><?php echo $row['paket'];?>:</h1>
-              <h5><?php echo $row['status'];?></h5>
+              <h5><?php echo $row['status'];?> disetujui</h5>
               <br><br>
                 <?php }?>
               </div>
@@ -298,6 +370,30 @@
 
   <!-- Template Main Javascript File -->
   <script src="<?php echo base_url('asset/js/main.js')?>"></script>
+
+  <!--===============================================================================================-->
+  	<script src="<?php echo base_url('asset/vendor/jquery/jquery-3.2.1.min.js')?>"></script>
+  <!--===============================================================================================-->
+  	<script src="<?php echo base_url('asset/vendor/bootstrap/jstable/popper.js')?>"></script>
+  	<script src="<?php echo base_url('asset/vendor/bootstrap/jstable/bootstrap.min.js')?>"></script>
+  <!--===============================================================================================-->
+  	<script src="<?php echo base_url('asset/vendor/select2/select2.min.js')?>"></script>
+  <!--===============================================================================================-->
+  	<script src="<?php echo base_url('asset/vendor/perfect-scrollbar/perfect-scrollbar.min.js')?>"></script>
+  	<script>
+  		$('.js-pscroll').each(function(){
+  			var ps = new PerfectScrollbar(this);
+
+  			$(window).on('resize', function(){
+  				ps.update();
+  			})
+  		});
+
+
+  	</script>
+  <!--===============================================================================================-->
+  	<script src="<?php echo base_url('asset/js/main.js')?>"></script>
+
 
 </body>
 </html>

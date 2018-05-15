@@ -9,8 +9,9 @@ class Cprofile extends CI_Controller{
     //Codeigniter : Write Less Do More
       $this->load->model('mdl_peserta');
         $this->load->model('mdl_jadwal');
-          $this->load->model('mdl_pembayaran');
+          $this->load->model('mdl_konfirmasi');
             $this->load->model('mdl_guru');
+              $this->load->model('mdl_jguru');
 
   }
 
@@ -25,7 +26,17 @@ class Cprofile extends CI_Controller{
     $lo["get_selected"]=$this->mdl_peserta->get_selected_data_peserta($id);
     $lo["get_jadwal"]=$this->mdl_jadwal->get_selected_jadwal($pst_name);
     $lo["get_pembayaran"]=$this->mdl_pembayaran->get_selected_pembayaran($pst_name);
+    $lo["get_guru"]=$this->mdl_jguru->get_all_data();
     $this->load->view('Peserta/landing',$lo);
+  }
+  public function landingG()
+  {
+    $id = $_SESSION['id_user']['id'];
+    $guru_name = $_SESSION['id_user']['guru_name'];
+    $lo["get_jadwal"]=$this->mdl_jadwal->get_selected_jadwal($guru_name);
+    $lo["get_konfirmasi"]=$this->mdl_konfirmasi->get_selected_konfirmasi($guru_name);
+    $lo["get_guru"]=$this->mdl_guru->get_selected_guru($id);
+    $this->load->view('Guru/landingG',$lo);
   }
 
   public function edit()

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mdl_pembayaran extends CI_Model{
+class Mdl_konfirmasi extends CI_Model{
 
   function __construct() {
       parent::__construct();
@@ -10,18 +10,18 @@ class Mdl_pembayaran extends CI_Model{
 
   public function add($data)
   {
-      $this->db->insert('pembayaran', $data);
+      $this->db->insert('konfirmasi', $data);
   }
 
   public function get_all_data()
 	{
-		$query = $this->db->get('pembayaran');
+		$query = $this->db->get('konfirmasi');
   //$query = $this->db->query('SELECT * from peserta');
 		return $query;
 	}
-  public function get_selected_pembayaran($pst_name)
+  public function get_selected_konfirmasi($guru_name)
   {
-    $query = $this->db->get_where('pembayaran', array('pst_name' => $pst_name));
+    $query = $this->db->get_where('konfirmasi', array('guru_name' => $guru_name));
     return $query;
   }
 }
