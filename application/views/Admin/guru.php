@@ -1,3 +1,8 @@
+<?php
+    if (!isset($_SESSION['id_user'])) {
+    redirect(base_url("/Welcome/masukadmin"));
+}
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,9 +159,9 @@
                    <tr class="row100 body">
                      <td class="cell100 column1"><?php echo $row['guru_name'];?></td>
                      <td class="cell100 column2"><?php echo $row['guru_email'];?></td>
-                     <td class="cell100 column3"><a href="<?php echo base_url() ?>asset/picture/<?php echo $row['berkas'];?>">Berkas</a></td>
-                     <td class="cell100 column4"></td>
-                     <td class="cell100 column5"></td>
+                     <td class="cell100 column3"><a href="<?php echo base_url() ?>asset/picture/guru/<?php echo $row['berkas'];?>">Berkas</a></td>
+                     <td class="cell100 column4"><a href="<?php echo base_url()?>Crud/addgurufix/<?php echo $row['guru_name']; ?>/<?php echo $row['guru_email']; ?>/<?php echo $row['guru_password']; ?>/<?php echo $row['guru_gender']; ?>/<?php echo $row['berkas']; ?>">Terima</a></td>
+                     <td class="cell100 column5"><a href="<?php echo base_url()?>Crud/deleteguru/<?php echo $row['guru_email']; ?>">Tolak</a></td>
                    </tr>
                  <?php } ?>
                   </tbody>

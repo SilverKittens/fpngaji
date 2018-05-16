@@ -17,7 +17,12 @@ class Login_model extends CI_Model
     public function validate_guru($data) {
         $this->db->where('guru_email', $data['guru_email']);
         $this->db->where('guru_password',$data['guru_password']);
-        return $this->db->get('guru')->row();
+        return $this->db->get('gurufix')->row();
+    }
+    public function validate_admin($data) {
+        $this->db->where('adm_username', $data['adm_username']);
+        $this->db->where('adm_password',$data['adm_password']);
+        return $this->db->get('admin')->row();
     }
 
     function __destruct() {

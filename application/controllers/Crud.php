@@ -13,6 +13,7 @@ class Crud extends CI_Controller{
     $this->load->model('mdl_guru');
     $this->load->model('mdl_jadwal');
     $this->load->model('mdl_jguru');
+    $this->load->model('mdl_gurufix');
       $this->load->library('upload');
       $this->load->library('pagination');
   }
@@ -85,6 +86,7 @@ class Crud extends CI_Controller{
        $this->mdl_konfirmasi->add($data);
        redirect('Cprofile/landing','refresh');
   }
+
   public function addguru()
   {
     $guru_name =$this->input->post('nama');
@@ -149,13 +151,31 @@ class Crud extends CI_Controller{
     $link = rand(100000,999999);
     $data = array(
                   'guru_name'          => urldecode($guru),
-                  'pst_name'              => urldecode($pst),
+                  'pst_name'           => urldecode($pst),
                   'hari'               => $hari,
                   'jam'                => $jam,
-                  'paket'       => $paket,
-                  'link'        =>$link
+                  'paket'              => $paket,
+                  'link'               =>$link
                 );
        $this->mdl_jadwal->add($data);
        redirect('admin','refresh');
+  }
+  public function addgurufix($guru,$email,$password,$gender,$berkas)
+  {
+    $data = array(
+                  'guru_name'          => urldecode($guru),
+                  'guru_email'         => urldecode($email),
+                  'guru_password'      => urldecode($password),
+                  'guru_gender'        => $gender,
+                  'berkas'             => $berkas
+                );
+       $this->mdl_gurufix->add($data);
+       $this->mdl_guru->delete($email);
+       redirect('Admin/guru','refresh');
+  }
+  public function deleteguru($guru_email)
+  {
+    $this->mdl_guru->delete($guru_email);
+    redirect('Admin/guru','refresh');
   }
 }

@@ -69,7 +69,7 @@
               <h5>Tempat, Tanggal lahir :</h5>
               <input type="text" name="tempat" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:45%">,<input type="date" name="bday" max="2010-12-31" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:45%" >
               <h5>Jenis kelamin :</h5>
-              <input type="radio" name="gender" value="Laki-laki"> Laki - laki <input style="margin-left:20px" type="radio" name="gender" value="Perempuan"> Perempuan <br>
+              <input type="radio" name="gender" value="L"> Laki - laki <input style="margin-left:20px" type="radio" name="gender" value="P"> Perempuan <br>
               <h5>E-mail :</h5> <input required type="email" name="email" placeholder="E-mail" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Password :</h5> <input required type="password" name="password1" placeholder="password" style="border-radius: 7px;background: transparent; border-color:white;color:white;padding:15px;width:100%"><br><br>
               <h5>Berkas :</h5>

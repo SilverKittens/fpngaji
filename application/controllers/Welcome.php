@@ -38,4 +38,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('masukguru');
 	}
+	public function masukadmin()
+	{
+		$this->load->view('Admin/adminlogin');
+	}
 }

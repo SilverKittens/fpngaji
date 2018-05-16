@@ -1,6 +1,6 @@
 <?php
     if (!isset($_SESSION['id_user'])) {
-    redirect(base_url("/Welcome/masuk"));
+    redirect(base_url("/Welcome/masukguru"));
 }
  ?>
  <!DOCTYPE html>
@@ -282,9 +282,6 @@
                   <div class="box">
                 <h5>E-mail :</h5> <input disabled required type="email" name="email" value="<?php echo $row['guru_email'];?>" style="border-radius: 7px;background: transparent; border-color:white;color:black;padding:15px;width:100%"><br><br>
                   <?php }?>
-                  <form action="<?php echo base_url()?>Cprofile/edit" method="post">
-                    <input type="submit" value="Edit" class="btn btn-outline btn-xl js-scroll-trigger" style="color:black">
-                  </form>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mdl_guru extends CI_Model{
+class Mdl_gurufix extends CI_Model{
 
   function __construct() {
       parent::__construct();
@@ -10,7 +10,7 @@ class Mdl_guru extends CI_Model{
 
   public function add($data)
   {
-      $this->db->insert('guru', $data);
+      $this->db->insert('gurufix', $data);
   }
   public function set($value='')
   {
@@ -19,18 +19,13 @@ class Mdl_guru extends CI_Model{
 
   public function get_all_data()
 	{
-		$query = $this->db->get('guru');
+		$query = $this->db->get('gurufix');
   //$query = $this->db->query('SELECT * from peserta');
 		return $query;
 	}
   public function get_selected_guru($id)
   {
-    $query = $this->db->get_where('guru', array('id' => $id));
+    $query = $this->db->get_where('gurufix', array('id' => $id));
     return $query;
-  }
-  public function delete($guru_email)
-  {
-      $this->db->where('guru_email',$guru_email);
-      $this->db->delete('guru');
   }
 }
