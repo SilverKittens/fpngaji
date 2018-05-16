@@ -59,7 +59,7 @@ class Crud extends CI_Controller{
             $data = array(
                           'pst_name'         => $pst_name,
                           'pst_email'        => $pst_email,
-                          'pst_password'     => $pst_password,
+                          'pst_password'     => sha1($pst_password),
                           'pst_gender'       => $pst_gender,
                           'foto'             => $foto['file_name']
                         );
@@ -110,7 +110,7 @@ class Crud extends CI_Controller{
             $data = array(
                           'guru_name'         => $guru_name,
                           'guru_email'        => $guru_email,
-                          'guru_password'     => $guru_password,
+                          'guru_password'     => sha1($guru_password),
                           'guru_gender'       => $guru_gender,
                           'berkas'            => $foto['file_name']
                         );
@@ -170,7 +170,7 @@ class Crud extends CI_Controller{
     $data = array(
                   'guru_name'          => urldecode($guru),
                   'guru_email'         => urldecode($email),
-                  'guru_password'      => urldecode($password),
+                  'guru_password'      => sha1(urldecode($password)),
                   'guru_gender'        => $gender,
                   'berkas'             => $berkas
                 );

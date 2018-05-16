@@ -17,7 +17,7 @@ class Loginadmin extends CI_Controller
             if(!empty($result)) {
                 $data =[
                     'adm_username' => $result->adm_username,
-                    'adm_password' => $result->guru_password,
+                    'adm_password' => sha1($result->guru_password),
                 ];
                 $_SESSION['id_user']=$data;
                 $this->session->set_userdata('user',$data);

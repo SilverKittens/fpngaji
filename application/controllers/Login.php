@@ -18,7 +18,7 @@ class Login extends CI_Controller
             if(!empty($result)) {
                 $data =[
                     'pst_email' => $result->pst_email,
-                    'pst_password' => $result->pst_password,
+                    'pst_password' => sha1($result->pst_password),
                     'id'=> $result->id,
                     'pst_name' => $result->pst_name
                 ];
