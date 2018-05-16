@@ -158,7 +158,12 @@ class Crud extends CI_Controller{
                   'link'               =>$link
                 );
        $this->mdl_jadwal->add($data);
-       redirect('admin','refresh');
+       $this->mdl_konfirmasi->delete($guru,$pst,$paket,$hari,$jam);
+       redirect('Admin/peserta','refresh');
+  }
+  public function deletekonfirmasi()
+  {
+    $this->mdl_konfirmasi->delete($guru,$pst,$paket,$hari,$jam);
   }
   public function addgurufix($guru,$email,$password,$gender,$berkas)
   {

@@ -38,4 +38,17 @@ class Mdl_konfirmasi extends CI_Model{
             $this->db->where('id', $id);
             $this->db->update('konfirmasi', $data);
   }
+  public function delete($guru,$pst,$paket,$hari,$jam)
+  {
+    $data = array(
+
+      'guru_name' => urldecode($guru),
+      'pst_name'  => urldecode($pst),
+      'paket'     => urldecode($paket),
+      'hari'      => $hari,
+      'jam'       => $jam
+    );
+    $this->db->where($data);
+    $this->db->delete('konfirmasi');
+  }
 }
