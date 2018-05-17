@@ -193,7 +193,7 @@
                   <option value="Minggu">Minggu</option>
                 </select>
                 <h3 class="cta-title">Jam</h3>
-              <input type="text" name="jam" value=""><br><br>
+              <input type="time" name="jam" value=""><br><br>
               <input type="submit" name="Submit" value="Tambahkan jadwal">
             </form>
 

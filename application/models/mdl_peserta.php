@@ -10,7 +10,7 @@ class Mdl_peserta extends CI_Model{
 
   public function add($data)
   {
-      $this->db->insert('Peserta', $data);
+      $this->db->insert('peserta', $data);
   }
 
   public function get_all_data()

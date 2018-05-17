@@ -12,7 +12,7 @@ class Cprofile extends CI_Controller{
           $this->load->model('mdl_konfirmasi');
             $this->load->model('mdl_guru');
               $this->load->model('mdl_jguru');
-
+              $this->load->model('mdl_gurufix');
   }
 
   public function Index()
@@ -35,7 +35,7 @@ class Cprofile extends CI_Controller{
     $guru_name = $_SESSION['id_user']['guru_name'];
     $lo["get_jadwal"]=$this->mdl_jadwal->get_selected_jadwal1($guru_name);
     $lo["get_konfirmasi"]=$this->mdl_konfirmasi->get_selected_konfirmasi($guru_name);
-    $lo["get_guru"]=$this->mdl_guru->get_selected_guru($id);
+    $lo["get_guru"]=$this->mdl_gurufix->get_selected_guru($id);
     $this->load->view('Guru/landingG',$lo);
   }
 

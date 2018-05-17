@@ -16,20 +16,25 @@ class Admin extends CI_Controller{
 
   function index()
   {
-$this->load->view('admin/dashboard');
+$this->load->view('Admin/dashboard');
   }
   public function login()
   {
-    $this->load->view('admin/adminlogin');
+    $this->load->view('Admin/adminlogin');
   }
   public function peserta()
   {
     $lo["get_konfirmasi"]=$this->mdl_konfirmasi->get_all_data();
-    $this->load->view('admin/peserta',$lo);
+    $this->load->view('Admin/peserta',$lo);
   }
   public function guru()
   {
     $lo["get_guru"]=$this->mdl_guru->get_all_data();
-    $this->load->view('admin/guru',$lo);
+    $this->load->view('Admin/guru',$lo);
+  }
+  public function jadwal()
+  {
+    $lo["get_jadwal"]=$this->mdl_jadwal->get_all_data();
+    $this->load->view('Admin/jadwal',$lo);
   }
 }

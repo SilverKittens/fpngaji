@@ -29,4 +29,10 @@ class Mdl_jadwal extends CI_Model{
     $query = $this->db->get_where('jadwalngaji', array('guru_name' => $guru_name));
     return $query;
   }
+
+  public function deletejadwal($id)
+  {
+      $this->db->where('id', $id);
+      $this->db->delete('jadwalngaji');
+  }
 }

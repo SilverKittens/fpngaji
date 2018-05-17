@@ -95,6 +95,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url() ?>Admin/peserta"><i class="fa fa-circle-o"></i>Pembayaran Peserta</a></li>
             <li><a href="<?php echo base_url() ?>Admin/guru"><i class="fa fa-circle-o"></i> Guru</a></li>
+            <li><a href="<?php echo base_url() ?>Admin/jadwal"><i class="fa fa-circle-o"></i> Jadwal</a></li>
           </ul>
         </li>
 

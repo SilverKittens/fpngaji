@@ -146,7 +146,7 @@ class Crud extends CI_Controller{
        $this->mdl_jguru->add($data);
        redirect('Cprofile/landingG','refresh');
   }
-  public function addjadwalngaji($guru,$pst,$paket,$hari,$jam)
+  public function addjadwalngaji($guru,$pst,$paket,$hari,$jam,$id)
   {
     $link = rand(100000,999999);
     $data = array(
@@ -154,33 +154,60 @@ class Crud extends CI_Controller{
                   'pst_name'           => urldecode($pst),
                   'hari'               => $hari,
                   'jam'                => $jam,
-                  'paket'              => $paket,
+                  'paket'              => urldecode($paket),
                   'link'               =>$link
                 );
        $this->mdl_jadwal->add($data);
-       $this->mdl_konfirmasi->delete($guru,$pst,$paket,$hari,$jam);
+       $this->mdl_konfirmasi->delete($guru,$pst,$paket,$hari,$jam,$id);
        redirect('Admin/peserta','refresh');
   }
-  public function deletekonfirmasi()
+  public function deletekonfirmasi($guru,$pst,$paket,$hari,$jam,$id)
   {
-    $this->mdl_konfirmasi->delete($guru,$pst,$paket,$hari,$jam);
+    $this->mdl_konfirmasi->delete($guru,$pst,$paket,$hari,$jam,$id);
+    redirect('Admin/peserta','refresh');
   }
   public function addgurufix($guru,$email,$password,$gender,$berkas)
   {
     $data = array(
                   'guru_name'          => urldecode($guru),
                   'guru_email'         => urldecode($email),
-                  'guru_password'      => sha1(urldecode($password)),
+                  'guru_password'      => urldecode($password),
                   'guru_gender'        => $gender,
                   'berkas'             => $berkas
                 );
        $this->mdl_gurufix->add($data);
        $this->mdl_guru->delete($email);
+
+                                   $config = Array(
+                                'protocol' => 'smtp',
+                                'smtp_host' => 'mx1.hostinger.co.id',
+                                'smtp_port' => 587,
+                                'smtp_user' => 'admin@ngajikuy.com',
+                                'smtp_pass' => 'Bismill4h',
+                                'mailtype'  => 'html',
+                                'charset'   => 'iso-8859-1'
+                            );
+                            $this->load->library('email', $config);
+                            $this->email->set_newline("\r\n");
+
+                             $this->email->from('admin@ngajikuy.com', 'Ngajikuy');
+                            $this->email->to($email);
+
+                            $this->email->subject('Diterima sebagai Guru');
+                            $this->email->message('Selamat anda telah diterima sebagai guru di ngajikuy.com');
+
+                            $result = $this->email->send();
+
        redirect('Admin/guru','refresh');
   }
   public function deleteguru($guru_email)
   {
     $this->mdl_guru->delete($guru_email);
     redirect('Admin/guru','refresh');
+  }
+  public function deletejadwal($id)
+  {
+    $this->mdl_jadwal->deletejadwal($id);
+    redirect('Admin/jadwal','refresh');
   }
 }

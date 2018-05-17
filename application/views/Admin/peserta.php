@@ -110,6 +110,7 @@
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url() ?>Admin/peserta"><i class="fa fa-circle-o"></i>Pembayaran Peserta</a></li>
             <li><a href="<?php echo base_url() ?>Admin/guru"><i class="fa fa-circle-o"></i> Guru</a></li>
+            <li><a href="<?php echo base_url() ?>Admin/jadwal"><i class="fa fa-circle-o"></i>Jadwal</a></li>
           </ul>
         </li>
 
@@ -158,8 +159,8 @@
                       <td class="cell100 column1"><?php echo $row['guru_name'];?></td>
                       <td class="cell100 column2"><?php echo $row['pst_name'];?></td>
                       <td class="cell100 column3"><?php echo $row['paket'];?></td>
-                      <td class="cell100 column4"><a href="<?php echo base_url()?>Crud/addjadwalngaji/<?php echo $row['guru_name']; ?>/<?php echo $row['pst_name']; ?>/<?php echo $row['paket']; ?>/<?php echo $row['hari']; ?>/<?php echo $row['jam']; ?>">Terima </a></td>
-                      <td class="cell100 column5"></td>
+                      <td class="cell100 column4"><a href="<?php echo base_url()?>Crud/addjadwalngaji/<?php echo $row['guru_name']; ?>/<?php echo $row['pst_name']; ?>/<?php echo $row['paket']; ?>/<?php echo $row['hari']; ?>/<?php echo $row['jam']; ?>/<?php echo $row['id']; ?>">Terima </a></td>
+                      <td class="cell100 column5"><a href="<?php echo base_url()?>Crud/deletekonfirmasi/<?php echo $row['guru_name']; ?>/<?php echo $row['pst_name']; ?>/<?php echo $row['paket']; ?>/<?php echo $row['hari']; ?>/<?php echo $row['jam']; ?>/<?php echo $row['id']; ?>">Tolak </a></td>
                     </tr>
                   <?php } ?>
                   </tbody>
